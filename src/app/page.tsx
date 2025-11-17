@@ -1,24 +1,24 @@
 "use client";
 
-import AboutSection from '@/components/AboutSection/AboutSection'; // Updated path
-import JourneyTimeline from '@/components/JourneyTimeline/JourneyTimeline'; // Updated path
-import ProjectGrid from '@/components/ProjectGrid/ProjectGrid'; // Updated path
-import SkillsSection from '@/components/SkillsSection/SkillsSection'; // Updated path
-import ContactSection from '@/components/ContactSection/ContactSection'; // Updated path
-import ParallaxTitle from '@/components/ParallaxTitle/ParallaxTitle'; // Updated path
-import AnimatedText from '@/components/AnimatedText/AnimatedText'; // Updated path
-import Hero from '@/components/Hero/Hero'; // Import the new Hero component
-import { useGsapFadeIn } from '@/hooks/useGsapFadeIn'; // Import useGsapFadeIn
+import AboutSection from '@/components/AboutSection/AboutSection';
+import JourneyTimeline from '@/components/JourneyTimeline/JourneyTimeline';
+import ProjectGrid from '@/components/ProjectGrid/ProjectGrid';
+import SkillsSection from '@/components/SkillsSection/SkillsSection';
+import ContactSection from '@/components/ContactSection/ContactSection';
+import ParallaxTitle from '@/components/ParallaxTitle/ParallaxTitle';
+import Hero from '@/components/Hero/Hero';
+import { useGsapFadeIn } from '@/hooks/useGsapFadeIn';
+import DynamicBackgrounds from '@/components/DynamicBackgrounds/DynamicBackgrounds'; // Import DynamicBackgrounds
 
 export default function Home() {
-  const aboutRef = useGsapFadeIn(); // Apply fade-in to About Section
-  const skillsRef = useGsapFadeIn(); // Apply fade-in to Skills Section
-  const projectsRef = useGsapFadeIn(); // Apply fade-in to Projects Section
-  const journeyRef = useGsapFadeIn(); // Apply fade-in to Journey Section
-  const contactRef = useGsapFadeIn(); // Apply fade-in to Contact Section
+  const aboutRef = useGsapFadeIn();
+  const skillsRef = useGsapFadeIn();
+  const projectsRef = useGsapFadeIn();
+  const journeyRef = useGsapFadeIn();
+  const contactRef = useGsapFadeIn();
 
   return (
-    <>
+    <DynamicBackgrounds>
       {/* Home Section */}
       <Hero />
 
@@ -61,6 +61,6 @@ export default function Home() {
           <ContactSection />
         </div>
       </section>
-    </>
+    </DynamicBackgrounds>
   );
 }

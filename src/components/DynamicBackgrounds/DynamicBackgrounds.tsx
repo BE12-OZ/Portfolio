@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useRef, useEffect, useState, useLayoutEffect } from 'react';
-import styles from './DynamicBackgrounds.module.scss'; // Import the SCSS module
+import React, { useRef, useState, useLayoutEffect } from 'react';
+import { Canvas } from '@react-three/fiber';
+import styles from './DynamicBackgrounds.module.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -12,23 +13,37 @@ type DynamicBackgroundsProps = {
 };
 
 const sectionColors: { [key: string]: string } = {
-  home: '#1a202c', // navy-dark
-  about: '#2d3748', // slightly lighter navy
+  home: '#1a202c',
+  about: '#2d3748',
   skills: '#1a202c',
   projects: '#2d3748',
   journey: '#1a202c',
   contact: '#2d3748',
 };
 
+function Scene({ color }: { color: string }) {
+  return (
+    <>
+      <color attach="background" args={[color]} />
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} />
+      <mesh>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="orange" />
+      </mesh>
+    </>
+  );
+}
+
 export default function DynamicBackgrounds({ children }: DynamicBackgroundsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
+  const [bgColor, setBgColor] = useState(sectionColors.home);
 
   useLayoutEffect(() => {
-    if (containerRef.current && backgroundRef.current) {
+    if (containerRef.current) {
       const sections = Array.from(containerRef.current.querySelectorAll('section[id]'));
-      
-      sections.forEach((section, index) => {
+
+      sections.forEach((section) => {
         const id = section.id;
         const color = sectionColors[id] || sectionColors.home;
 
@@ -36,27 +51,26 @@ export default function DynamicBackgrounds({ children }: DynamicBackgroundsProps
           trigger: section,
           start: 'top center',
           end: 'bottom center',
-          onEnter: () => gsap.to(backgroundRef.current, { backgroundColor: color, duration: 0.5 }),
-          onEnterBack: () => gsap.to(backgroundRef.current, { backgroundColor: color, duration: 0.5 }),
-          // scrub: true, // Optional: for continuous color transition
-          // markers: true, // For debugging
+          onEnter: () => setBgColor(color),
+          onEnterBack: () => setBgColor(color),
         });
       });
     }
 
-    // Set initial background color
-    if (backgroundRef.current) {
-      gsap.set(backgroundRef.current, { backgroundColor: sectionColors.home });
-    }
+    setBgColor(sectionColors.home);
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [children]);
 
   return (
     <div ref={containerRef} className={styles.dynamicBackground}>
-      <div ref={backgroundRef} className={styles.backgroundLayer}></div>
+      <div className={styles.backgroundLayer}>
+        <Canvas>
+          <Scene color={bgColor} />
+        </Canvas>
+      </div>
       {children}
     </div>
   );
