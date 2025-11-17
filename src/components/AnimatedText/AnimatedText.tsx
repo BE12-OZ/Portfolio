@@ -6,7 +6,7 @@ import styles from './AnimatedText.module.scss'; // Import the SCSS module
 
 type AnimatedTextProps = {
   text: string;
-  el?: keyof JSX.IntrinsicElements; // 'h1', 'p', 'span' 등 HTML 태그
+  el?: keyof React.JSX.IntrinsicElements; // 'h1', 'p', 'span' 등 HTML 태그
   className?: string;
   once?: boolean; // 한 번만 애니메이션할지 여부
   animationType?: 'fade' | 'scatter'; // 애니메이션 타입 추가
