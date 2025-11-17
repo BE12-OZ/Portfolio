@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+// import Link from 'next/link'; // Link 제거
 import { useCursorStore } from '@/store/cursorStore';
 import styles from './ProjectCard.module.scss'; // Import the SCSS module
 
@@ -12,27 +12,36 @@ type Project = {
   category: string;
   thumbnail: string;
   shortDescription: string;
+  longDescription: string; // ProjectDetailModal에서 사용
   technologies: string[];
+  links: {
+    github?: string;
+    liveDemo?: string;
+  };
 };
 
 type ProjectCardProps = {
   project: Project;
+  onProjectClick: (project: Project) => void; // 새로 추가
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, onProjectClick }: ProjectCardProps) {
   const { setCursorType } = useCursorStore();
 
   return (
-    <Link 
-      href={`/projects/${project.id}`}
-      onMouseEnter={() => setCursorType('hovered')}
-      onMouseLeave={() => setCursorType('default')}
-      className={styles.projectCardLink}
-    >
+    // <Link // Link 제거
+    //   href={`/projects/${project.id}`}
+    //   onMouseEnter={() => setCursorType('hovered')}
+    //   onMouseLeave={() => setCursorType('default')}
+    //   className={styles.projectCardLink}
+    // >
       <motion.div
         className={styles.projectCard}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.05, y: -5 }}
         transition={{ duration: 0.3 }}
+        onMouseEnter={() => setCursorType('hovered')} // motion.div로 이동
+        onMouseLeave={() => setCursorType('default')} // motion.div로 이동
+        onClick={() => onProjectClick(project)} // onClick 핸들러 추가
       >
         {/* Next.js Image 컴포넌트는 public 디렉터리를 기준으로 경로를 잡습니다. */}
         {/* 현재는 placeholder 이미지를 사용합니다. */}
@@ -51,6 +60,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
       </motion.div>
-    </Link>
+    // </Link> // Link 제거
   );
 }

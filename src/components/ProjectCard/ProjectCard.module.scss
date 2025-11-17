@@ -6,19 +6,28 @@
 }
 
 .projectCard {
-  background-color: #2d3748; // bg-card-bg (assuming this color)
+  background-color: $section-color; // 변경: $base-color -> $section-color
   border-radius: 0.5rem; // rounded-lg
   overflow: hidden; // overflow-hidden
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); // shadow-lg
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05),
+            0 0 8px 1px rgba($glow-color, 0.2),
+            0 0 15px 2px rgba($glow-color, 0.1);
   height: 100%; // h-full
   display: flex; // flex
   flex-direction: column; // flex-col
+  transition: box-shadow 0.3s ease-in-out; // transform은 framer-motion이 처리
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05),
+                0 0 12px 2px rgba($glow-color, 0.4),
+                0 0 25px 5px rgba($glow-color, 0.2);
+  }
 }
 
 .thumbnailWrapper {
   width: 100%; // w-full
   height: 12rem; // h-48 (12 * 16px = 192px)
-  background-color: $navy-dark; // bg-navy-dark
+  background-color: $background-color; // 변경: $base-color -> $background-color
   display: flex; // flex
   align-items: center; // items-center
   justify-content: center; // justify-center
@@ -39,7 +48,7 @@
 
 .category {
   font-size: 0.875rem; // text-sm
-  color: $teal-accent; // text-teal-accent
+  color: $accent-color; // 변경: $sub-color -> $accent-color
   font-weight: 600; // font-semibold
 }
 
@@ -48,11 +57,11 @@
   font-weight: bold; // font-bold
   margin-top: $spacing-2; // mt-2
   margin-bottom: $spacing-2; // mb-2
-  color: $white; // text-light-text (assuming light-text is white)
+  color: $text-color; // 변경: $white -> $text-color
 }
 
 .description {
-  color: $gray-300; // text-gray-400 (using gray-300 for now)
+  color: $text-color; // 변경: $point-color -> $text-color
   font-size: 0.875rem; // text-sm
   flex-grow: 1; // flex-grow
 }
@@ -65,8 +74,8 @@
 }
 
 .techTag {
-  background-color: $navy-dark; // bg-navy-dark
-  color: $gray-300; // text-gray-300
+  background-color: $background-color; // 변경: $base-color -> $background-color
+  color: $text-color; // 변경: $point-color -> $text-color
   font-size: 0.75rem; // text-xs
   font-weight: 500; // font-medium
   padding: 0.25rem $spacing-2_5; // px-2.5 py-1 (assuming $spacing-2_5 is 0.625rem or 10px)

@@ -9,7 +9,7 @@ const skills = [
 
 export default function SkillsSection() {
   return (
-    <div className={styles.skillsSection}>
+    <div className={styles.skillsCard}>
       <div className={styles.skillsGrid}>
         {skills.map((skill) => {
           const skillCardRef = useGsapFadeIn(); // Apply fade-in to each skill card

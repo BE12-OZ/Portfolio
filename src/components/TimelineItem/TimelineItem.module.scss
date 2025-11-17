@@ -27,10 +27,20 @@
 }
 
 .card {
-  padding: $spacing-4; // p-4
-  background-color: #2d3748; // bg-card-bg (assuming this color)
-  border-radius: 0.5rem; // rounded-lg
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); // shadow-lg
+  padding: $spacing-8; // p-8 (contactCard와 유사하게)
+  background-color: $section-color; // 변경: $sub-color -> $section-color
+  border-radius: 1rem; // rounded-2xl (contactCard와 유사하게)
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
+            0 0 8px 1px rgba($glow-color, 0.2),
+            0 0 15px 2px rgba($glow-color, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
+                0 0 12px 2px rgba($glow-color, 0.4),
+                0 0 25px 5px rgba($glow-color, 0.2);
+  }
 
   &.left { // mr-4
     margin-right: $spacing-4;
@@ -43,7 +53,7 @@
 
 .date {
   font-size: 0.875rem; // text-sm
-  color: $teal-accent; // text-teal-accent
+  color: $accent-color; // 변경: $sub-color -> $accent-color
   font-weight: 600; // font-semibold
 }
 
@@ -51,17 +61,17 @@
   font-size: $text-lg; // text-lg
   font-weight: bold; // font-bold
   margin-top: 0.25rem; // mt-1
-  color: $white; // text-light-text (assuming light-text is white)
+  color: $text-color; // 변경: $white -> $text-color
 }
 
 .company {
   font-size: 0.875rem; // text-sm
-  color: $gray-300; // text-gray-400 (using gray-300 for now)
+  color: $text-color; // 변경: $point-color -> $text-color
   margin-bottom: $spacing-2; // mb-2
 }
 
 .description {
-  color: $gray-300; // text-gray-300
+  color: $text-color; // 변경: $point-color -> $text-color
   font-size: 0.875rem; // text-sm
 }
 
@@ -69,7 +79,7 @@
   position: absolute; // absolute
   width: 1.25rem; // w-5
   height: 1.25rem; // h-5
-  background-color: $teal-accent; // bg-teal-accent
+  background-color: $accent-color; // 변경: $sub-color -> $accent-color
   border-radius: 9999px; // rounded-full
   z-index: 10; // z-10
   left: 50%; // left-1/2

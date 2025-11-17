@@ -2,7 +2,7 @@
 @import "../../styles/variables.scss";
 
 .header {
-  background-color: rgba($navy-dark, 0.5); // bg-navy-dark/50
+  background-color: rgba($background-color, 0.5); // 변경: $base-color -> $background-color
   backdrop-filter: blur(5px); // backdrop-blur-sm
   position: sticky;
   top: 0;
@@ -27,7 +27,7 @@
 .logo {
   font-size: $text-2xl; // text-2xl
   font-weight: bold; // font-bold
-  color: $white; // text-white
+  color: #ffffff; // 변경: $white -> #ffffff
   cursor: pointer;
 }
 
@@ -40,18 +40,18 @@
 .navItem {
   .navLink {
     font-size: $text-lg; // text-lg
-    color: $gray-300; // text-gray-300
+    color: $text-color; // 변경: $point-color -> $text-color
     transition-property: color; // transition-colors
     transition-duration: 150ms; // default transition duration
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); // default transition timing
     cursor: pointer;
 
     &:hover {
-      color: $white; // hover:text-white
+      color: #ffffff; // 변경: $white -> #ffffff
     }
 
     &.active { // activeClass="text-teal-accent font-bold"
-      color: $teal-accent;
+      color: $accent-color; // 변경: $sub-color -> $accent-color
       font-weight: bold;
     }
   }

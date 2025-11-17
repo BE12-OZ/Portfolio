@@ -7,7 +7,7 @@
   left: 0; // left-0
   right: 0; // right-0
   height: $spacing-2; // h-2 (assuming $spacing-2 is 0.5rem or 8px)
-  background-color: $teal-accent; // bg-teal-accent
+  background-color: $accent-color; // 변경: $sub-color -> $accent-color
   transform-origin: 0%; // origin-left (equivalent to transform-origin: left;)
   z-index: 999; // z-[999]
 }

@@ -11,10 +11,10 @@
 
 .question {
   font-weight: bold;
-  color: $teal-accent; // Example color
+  color: $accent-color; // 변경: $sub-color -> $accent-color
   margin-bottom: $spacing-2;
 }
 
 .answer {
-  color: $gray-300; // Example color
+  color: $text-color; // 변경: $point-color -> $text-color
 }

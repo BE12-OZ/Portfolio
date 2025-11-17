@@ -1,0 +1,108 @@
+// src/components/ProjectDetailModal/ProjectDetailModal.module.scss
+@import "../../styles/variables.scss";
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px); // 배경 블러 효과
+}
+
+.modalContent {
+  background-color: $section-color; // 변경: $base-color -> $section-color
+  border-radius: 1rem;
+  padding: $spacing-8;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba($glow-color, 0.7); // 글로우 효과
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  color: $text-color; // 변경: $white -> $text-color
+  width: 600px; // 적당한 너비 설정
+
+  @media (min-width: 768px) {
+    padding: $spacing-12;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: $spacing-4;
+  right: $spacing-4;
+  background: none;
+  border: none;
+  color: $text-color; // 변경: $point-color -> $text-color
+  cursor: pointer;
+  font-size: $text-2xl;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #ffffff; // 순수한 흰색
+  }
+}
+
+.title {
+  font-size: 2.25rem; // text-4xl
+  font-weight: bold;
+  margin-bottom: $spacing-2;
+  color: #ffffff; // 순수한 흰색
+}
+
+.category {
+  font-size: $text-lg;
+  color: $accent-color; // 변경: $sub-color -> $accent-color
+  margin-bottom: $spacing-4;
+}
+
+.longDescription {
+  font-size: $text-lg;
+  line-height: 1.75;
+  color: $text-color; // 변경: $point-color -> $text-color
+  margin-bottom: $spacing-6;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  margin-bottom: $spacing-6;
+}
+
+.techTag {
+  background-color: $background-color; // 변경: $base-color -> $background-color
+  color: $text-color; // 변경: $point-color -> $text-color
+  font-size: 0.75rem; // text-xs
+  font-weight: 500; // font-medium
+  padding: 0.25rem $spacing-2_5;
+  border-radius: 9999px;
+}
+
+.links {
+  display: flex;
+  gap: $spacing-4;
+  margin-top: $spacing-6;
+}
+
+.linkButton {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  background-color: $accent-color; // 변경: $sub-color -> $accent-color
+  color: #ffffff; // 순수한 흰색
+  padding: $spacing-3 $spacing-6;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darken($accent-color, 10%); // 변경: darken($sub-color, 10%) -> darken($accent-color, 10%)
+  }
+}

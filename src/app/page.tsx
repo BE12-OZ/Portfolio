@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 bg-navy-dark/50 min-h-screen flex flex-col justify-center" ref={skillsRef}>
+      <section id="skills" className="py-24 min-h-screen flex flex-col justify-center" ref={skillsRef}>
         <div className="container mx-auto px-4">
           <ParallaxTitle title="Skills" />
           <SkillsSection />
@@ -47,7 +47,7 @@ export default function Home() {
       </section>
 
       {/* Journey Section */}
-      <section id="journey" className="py-24 bg-navy-dark/50 min-h-screen flex flex-col justify-center" ref={journeyRef}>
+      <section id="journey" className="py-24 min-h-screen flex flex-col justify-center" ref={journeyRef}>
         <div className="container mx-auto px-4">
           <ParallaxTitle title="My Journey" />
           <JourneyTimeline />

@@ -1,6 +1,11 @@
 // src/components/ProjectGrid/ProjectGrid.module.scss
 @import "../../styles/variables.scss";
 
+.projectGridCard {
+  // 이 클래스에서 모든 스타일을 제거합니다.
+  // ProjectGrid 컴포넌트의 최상위 div는 이제 단순히 컨테이너 역할만 합니다.
+}
+
 .projectGrid {
   display: grid; // grid
   grid-template-columns: repeat(1, minmax(0, 1fr)); // grid-cols-1
@@ -8,6 +13,7 @@
   max-width: 64rem; // max-w-5xl (Tailwind's max-w-5xl is 64rem)
   margin-left: auto; // mx-auto
   margin-right: auto; // mx-auto
+  margin-top: $spacing-8; // 상위 컴포넌트에서 margin-top을 제거했으므로 여기에 추가
 
   @media (min-width: 768px) { // md:
     grid-template-columns: repeat(2, minmax(0, 1fr)); // md:grid-cols-2
