@@ -1,13 +1,13 @@
 // src/components/Footer/Footer.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .footer {
-  background-color: rgba($background-color, 0.5); // 변경: $base-color -> $background-color
+  background-color: rgba(var.$background-color, 0.5); // 변경: $base-color -> $background-color
   backdrop-filter: blur(5px); // backdrop-blur-sm
-  padding-top: $spacing-8; // py-8
-  padding-bottom: $spacing-8; // py-8
+  padding-top: var.$spacing-8; // py-8
+  padding-bottom: var.$spacing-8; // py-8
   text-align: center; // text-center
-  color: $text-color; // 변경: $point-color -> $text-color
+  color: var.$text-color; // 변경: $point-color -> $text-color
   font-size: 0.875rem; // text-sm
 }
 
@@ -15,6 +15,6 @@
   max-width: 1280px; // equivalent to Tailwind's container max-width
   margin-left: auto;
   margin-right: auto;
-  padding-left: $spacing-4; // px-4
-  padding-right: $spacing-4; // px-4
+  padding-left: var.$spacing-4; // px-4
+  padding-right: var.$spacing-4; // px-4
 }

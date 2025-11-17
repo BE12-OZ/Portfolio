@@ -1,11 +1,11 @@
 // src/components/TimelineItem/TimelineItem.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .timelineItem {
   position: relative; // relative
   width: 100%; // w-full
-  margin-top: $spacing-6; // my-6
-  margin-bottom: $spacing-6; // my-6
+  margin-top: var.$spacing-6; // my-6
+  margin-bottom: var.$spacing-6; // my-6
 }
 
 .contentWrapper {
@@ -27,51 +27,51 @@
 }
 
 .card {
-  padding: $spacing-8; // p-8 (contactCard와 유사하게)
-  background-color: $section-color; // 변경: $sub-color -> $section-color
+  padding: var.$spacing-8; // p-8 (contactCard와 유사하게)
+  background-color: var.$section-color; // 변경: $sub-color -> $section-color
   border-radius: 1rem; // rounded-2xl (contactCard와 유사하게)
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
-            0 0 8px 1px rgba($glow-color, 0.2),
-            0 0 15px 2px rgba($glow-color, 0.1);
+            0 0 8px 1px rgba(var.$glow-color, 0.2),
+            0 0 15px 2px rgba(var.$glow-color, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
-                0 0 12px 2px rgba($glow-color, 0.4),
-                0 0 25px 5px rgba($glow-color, 0.2);
+                0 0 12px 2px rgba(var.$glow-color, 0.4),
+                0 0 25px 5px rgba(var.$glow-color, 0.2);
   }
 
   &.left { // mr-4
-    margin-right: $spacing-4;
+    margin-right: var.$spacing-4;
   }
 
   &.right { // ml-4
-    margin-left: $spacing-4;
+    margin-left: var.$spacing-4;
   }
 }
 
 .date {
   font-size: 0.875rem; // text-sm
-  color: $accent-color; // 변경: $sub-color -> $accent-color
+  color: var.$accent-color; // 변경: $sub-color -> $accent-color
   font-weight: 600; // font-semibold
 }
 
 .title {
-  font-size: $text-lg; // text-lg
+  font-size: var.$text-lg; // text-lg
   font-weight: bold; // font-bold
   margin-top: 0.25rem; // mt-1
-  color: $text-color; // 변경: $white -> $text-color
+  color: var.$text-color; // 변경: $white -> $text-color
 }
 
 .company {
   font-size: 0.875rem; // text-sm
-  color: $text-color; // 변경: $point-color -> $text-color
-  margin-bottom: $spacing-2; // mb-2
+  color: var.$text-color; // 변경: $point-color -> $text-color
+  margin-bottom: var.$spacing-2; // mb-2
 }
 
 .description {
-  color: $text-color; // 변경: $point-color -> $text-color
+  color: var.$text-color; // 변경: $point-color -> $text-color
   font-size: 0.875rem; // text-sm
 }
 
@@ -79,7 +79,7 @@
   position: absolute; // absolute
   width: 1.25rem; // w-5
   height: 1.25rem; // h-5
-  background-color: $accent-color; // 변경: $sub-color -> $accent-color
+  background-color: var.$accent-color; // 변경: $sub-color -> $accent-color
   border-radius: 9999px; // rounded-full
   z-index: 10; // z-10
   left: 50%; // left-1/2

@@ -1,5 +1,5 @@
 // src/components/CustomCursor/CustomCursor.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .cursor {
   position: fixed; // fixed

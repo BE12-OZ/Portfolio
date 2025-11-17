@@ -1,8 +1,8 @@
 // src/components/Header/Header.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .header {
-  background-color: rgba($background-color, 0.5); // 변경: $base-color -> $background-color
+  background-color: rgba(var.$background-color, 0.5); // 변경: $base-color -> $background-color
   backdrop-filter: blur(5px); // backdrop-blur-sm
   position: sticky;
   top: 0;
@@ -13,19 +13,19 @@
   max-width: 1280px; // equivalent to Tailwind's container max-width
   margin-left: auto;
   margin-right: auto;
-  padding-left: $spacing-4; // px-4
-  padding-right: $spacing-4; // px-4
+  padding-left: var.$spacing-4; // px-4
+  padding-right: var.$spacing-4; // px-4
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: $spacing-16; // h-16
+  height: var.$spacing-16; // h-16
 }
 
 .logo {
-  font-size: $text-2xl; // text-2xl
+  font-size: var.$text-2xl; // text-2xl
   font-weight: bold; // font-bold
   color: #ffffff; // 변경: $white -> #ffffff
   cursor: pointer;
@@ -34,13 +34,13 @@
 .navList {
   display: flex;
   align-items: center;
-  gap: $spacing-6; // space-x-6
+  gap: var.$spacing-6; // space-x-6
 }
 
 .navItem {
   .navLink {
-    font-size: $text-lg; // text-lg
-    color: $text-color; // 변경: $point-color -> $text-color
+    font-size: var.$text-lg; // text-lg
+    color: var.$text-color; // 변경: $point-color -> $text-color
     transition-property: color; // transition-colors
     transition-duration: 150ms; // default transition duration
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); // default transition timing
@@ -51,7 +51,7 @@
     }
 
     &.active { // activeClass="text-teal-accent font-bold"
-      color: $accent-color; // 변경: $sub-color -> $accent-color
+      color: var.$accent-color; // 변경: $sub-color -> $accent-color
       font-weight: bold;
     }
   }

@@ -1,5 +1,5 @@
 // src/components/JourneyTimeline/JourneyTimeline.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .timelineContainer {
   position: relative; // relative

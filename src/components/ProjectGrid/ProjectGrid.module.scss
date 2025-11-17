@@ -1,5 +1,5 @@
 // src/components/ProjectGrid/ProjectGrid.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .projectGridCard {
   // 이 클래스에서 모든 스타일을 제거합니다.

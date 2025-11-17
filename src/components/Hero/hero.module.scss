@@ -1,5 +1,5 @@
 // src/components/Hero/hero.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .heroSection {
   display: flex;
@@ -8,7 +8,7 @@
   align-items: center;
   text-align: center;
   min-height: 100vh;
-  padding: $spacing-4; // px-4
+  padding: var.$spacing-4; // px-4
   margin-left: auto; // mx-auto
   margin-right: auto; // mx-auto
 }
@@ -17,7 +17,7 @@
   font-size: 3rem; // text-5xl
   font-weight: 800; // font-extrabold
   color: #ffffff; // 변경: $white -> #ffffff
-  margin-bottom: $spacing-4; // mb-4
+  margin-bottom: var.$spacing-4; // mb-4
 
   @media (min-width: 768px) { // md:
     font-size: 4.5rem; // md:text-7xl
@@ -26,7 +26,7 @@
 
 .heroSubtitle {
   font-size: 1.25rem; // text-xl
-  color: $text-color; // 변경: $point-color -> $text-color
+  color: var.$text-color; // 변경: $point-color -> $text-color
   
   @media (min-width: 768px) { // md:
     font-size: 1.5rem; // md:text-2xl

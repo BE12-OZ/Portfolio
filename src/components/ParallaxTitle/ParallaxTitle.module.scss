@@ -1,5 +1,5 @@
 // src/components/ParallaxTitle/ParallaxTitle.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .parallaxContainer {
   overflow: hidden; // overflow-hidden
@@ -9,5 +9,5 @@
   font-size: 2.25rem; // text-4xl
   font-weight: bold; // font-bold
   text-align: center; // text-center
-  margin-bottom: $spacing-12; // mb-12 (assuming $spacing-12 is 3rem or 48px)
+  margin-bottom: var.$spacing-12; // mb-12 (assuming $spacing-12 is 3rem or 48px)
 }

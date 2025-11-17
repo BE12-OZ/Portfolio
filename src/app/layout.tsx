@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Gwang-il's Portfolio",
   description: "A portfolio of projects by Gwang-il Jeon. Showcasing backend development skills, projects, and journey.",
   keywords: ["backend", "developer", "portfolio", "Next.js", "TypeScript", "Django", "Python"],
-  author: "Gwang-il Jeon",
+  authors: [{ name: "Gwang-il Jeon" }],
   openGraph: {
     title: "Gwang-il's Portfolio",
     description: "A portfolio of projects by Gwang-il Jeon. Showcasing backend development skills, projects, and journey.",

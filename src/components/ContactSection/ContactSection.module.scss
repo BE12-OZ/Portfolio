@@ -1,5 +1,6 @@
 // src/components/ContactSection/ContactSection.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
+@use "sass:color";
 
 .contactSection {
   text-align: center; // text-center
@@ -9,12 +10,12 @@
 }
 
 .contactCard {
-  background-color: $section-color; // 변경: $base-color -> $section-color
+  background-color: var.$section-color; // 변경: $base-color -> $section-color
   border-radius: 1rem; // rounded-2xl
-  padding: $spacing-8; // p-8
+  padding: var.$spacing-8; // p-8
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
-            0 0 8px 1px rgba($glow-color, 0.2),
-            0 0 15px 2px rgba($glow-color, 0.1);
+            0 0 8px 1px rgba(var.$glow-color, 0.2),
+            0 0 15px 2px rgba(var.$glow-color, 0.1);
   max-width: 32rem; // max-w-lg
   margin-left: auto; // mx-auto
   margin-right: auto; // mx-auto
@@ -23,64 +24,64 @@
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
-                0 0 12px 2px rgba($glow-color, 0.4),
-                0 0 25px 5px rgba($glow-color, 0.2);
+                0 0 12px 2px rgba(var.$glow-color, 0.4),
+                0 0 25px 5px rgba(var.$glow-color, 0.2);
   }
 
   @media (min-width: 768px) { // md:
-    padding: $spacing-12; // md:p-12
+    padding: var.$spacing-12; // md:p-12
   }
 }
 
 .title {
   font-size: 1.875rem; // text-3xl
   font-weight: bold; // font-bold
-  margin-bottom: $spacing-4; // mb-4
-  color: $text-color; // 변경: $white -> $text-color
+  margin-bottom: var.$spacing-4; // mb-4
+  color: var.$text-color; // 변경: $white -> $text-color
 }
 
 .infoGroup {
   display: flex; // flex
   align-items: center; // items-center
   justify-content: center; // justify-center
-  gap: $spacing-3; // gap-3
+  gap: var.$spacing-3; // gap-3
 }
 
 .infoText {
-  font-size: $text-lg; // text-lg
-  color: $text-color; // 변경: $point-color -> $text-color
+  font-size: var.$text-lg; // text-lg
+  color: var.$text-color; // 변경: $point-color -> $text-color
 }
 
 .socialLinks {
-  margin-top: $spacing-8; // mt-8
+  margin-top: var.$spacing-8; // mt-8
   display: flex; // flex
   justify-content: center; // justify-center
-  gap: $spacing-4; // gap-4
+  gap: var.$spacing-4; // gap-4
 }
 
 .socialLink {
   display: flex; // flex
   align-items: center; // items-center
-  gap: $spacing-2; // gap-2
+  gap: var.$spacing-2; // gap-2
   font-weight: bold; // font-bold
-  padding: 0.75rem $spacing-6; // py-3 px-6
+  padding: 0.75rem var.$spacing-6; // py-3 px-6
   border-radius: 0.5rem; // rounded-lg
   transition-property: background-color; // transition-colors
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  color: $text-color; // 변경: $white -> $text-color
+  color: var.$text-color; // 변경: $white -> $text-color
 
   &.github {
-    background-color: $background-color; // 변경: $base-color -> $background-color
+    background-color: var.$background-color; // 변경: $base-color -> $background-color
     &:hover {
-      background-color: darken($background-color, 10%); // 변경: darken($base-color, 10%) -> darken($background-color, 10%)
+      background-color: color.adjust(var.$background-color, $lightness: -10%); // 변경: darken($base-color, 10%) -> darken($background-color, 10%)
     }
   }
 
   &.velog {
-    background-color: $accent-color; // 변경: $sub-color -> $accent-color
+    background-color: var.$accent-color; // 변경: $sub-color -> $accent-color
     &:hover {
-      background-color: darken($accent-color, 10%); // 변경: darken($sub-color, 10%) -> darken($accent-color, 10%)
+      background-color: color.adjust(var.$accent-color, $lightness: -10%); // 변경: darken($sub-color, 10%) -> darken($accent-color, 10%)
     }
   }
 }

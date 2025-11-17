@@ -1,17 +1,17 @@
 // src/components/ProjectCard/ProjectCard.module.scss
-@import "../../styles/variables.scss";
+@use "../../styles/variables.scss" as var;
 
 .projectCardLink {
   // Styles for the Link wrapper if needed, otherwise it's just a container
 }
 
 .projectCard {
-  background-color: $section-color; // 변경: $base-color -> $section-color
+  background-color: var.$section-color; // 변경: $base-color -> $section-color
   border-radius: 0.5rem; // rounded-lg
   overflow: hidden; // overflow-hidden
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05),
-            0 0 8px 1px rgba($glow-color, 0.2),
-            0 0 15px 2px rgba($glow-color, 0.1);
+            0 0 8px 1px rgba(var.$glow-color, 0.2),
+            0 0 15px 2px rgba(var.$glow-color, 0.1);
   height: 100%; // h-full
   display: flex; // flex
   flex-direction: column; // flex-col
@@ -19,15 +19,15 @@
 
   &:hover {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05),
-                0 0 12px 2px rgba($glow-color, 0.4),
-                0 0 25px 5px rgba($glow-color, 0.2);
+                0 0 12px 2px rgba(var.$glow-color, 0.4),
+                0 0 25px 5px rgba(var.$glow-color, 0.2);
   }
 }
 
 .thumbnailWrapper {
   width: 100%; // w-full
   height: 12rem; // h-48 (12 * 16px = 192px)
-  background-color: $background-color; // 변경: $base-color -> $background-color
+  background-color: var.$background-color; // 변경: $base-color -> $background-color
   display: flex; // flex
   align-items: center; // items-center
   justify-content: center; // justify-center
@@ -40,7 +40,7 @@
 }
 
 .content {
-  padding: $spacing-6; // p-6
+  padding: var.$spacing-6; // p-6
   flex-grow: 1; // flex-grow
   display: flex; // flex
   flex-direction: column; // flex-col
@@ -48,36 +48,36 @@
 
 .category {
   font-size: 0.875rem; // text-sm
-  color: $accent-color; // 변경: $sub-color -> $accent-color
+  color: var.$accent-color; // 변경: $sub-color -> $accent-color
   font-weight: 600; // font-semibold
 }
 
 .title {
   font-size: 1.25rem; // text-xl
   font-weight: bold; // font-bold
-  margin-top: $spacing-2; // mt-2
-  margin-bottom: $spacing-2; // mb-2
-  color: $text-color; // 변경: $white -> $text-color
+  margin-top: var.$spacing-2; // mt-2
+  margin-bottom: var.$spacing-2; // mb-2
+  color: var.$text-color; // 변경: $white -> $text-color
 }
 
 .description {
-  color: $text-color; // 변경: $point-color -> $text-color
+  color: var.$text-color; // 변경: $point-color -> $text-color
   font-size: 0.875rem; // text-sm
   flex-grow: 1; // flex-grow
 }
 
 .technologies {
-  margin-top: $spacing-4; // mt-4
+  margin-top: var.$spacing-4; // mt-4
   display: flex; // flex
   flex-wrap: wrap; // flex-wrap
-  gap: $spacing-2; // gap-2
+  gap: var.$spacing-2; // gap-2
 }
 
 .techTag {
-  background-color: $background-color; // 변경: $base-color -> $background-color
-  color: $text-color; // 변경: $point-color -> $text-color
+  background-color: var.$background-color; // 변경: $base-color -> $background-color
+  color: var.$text-color; // 변경: $point-color -> $text-color
   font-size: 0.75rem; // text-xs
   font-weight: 500; // font-medium
-  padding: 0.25rem $spacing-2_5; // px-2.5 py-1 (assuming $spacing-2_5 is 0.625rem or 10px)
+  padding: 0.25rem var.$spacing-2_5; // px-2.5 py-1 (assuming $spacing-2_5 is 0.625rem or 10px)
   border-radius: 9999px; // rounded-full
 }
