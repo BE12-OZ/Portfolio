@@ -37,9 +37,8 @@ export default function Header() {
                   smooth={true}
                   duration={500}
                   offset={-64} // 헤더 높이만큼 오프셋
-                  className={styles.navItem.navLink}
-                  activeClass={styles.navItem.navLink + ' ' + styles.navItem.active} // Apply active class
-                  spy={true}
+                                     className={styles.navLink}
+                                     activeClass={styles.navLink + ' ' + styles.active} // Apply active class                  spy={true}
                   onMouseEnter={() => setCursorType('hovered')}
                   onMouseLeave={() => setCursorType('default')}
                 >

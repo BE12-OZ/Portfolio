@@ -6,7 +6,7 @@ import styles from './AnimatedText.module.scss'; // Import the SCSS module
 
 type AnimatedTextProps = {
   text: string;
-  el?: keyof JSX.IntrinsicElements; // 'h1', 'p', 'span' 등 HTML 태그
+  el?: keyof React.JSX.IntrinsicElements; // 'h1', 'p', 'span' 등 HTML 태그
   className?: string;
   once?: boolean; // 한 번만 애니메이션할지 여부
   animationType?: 'fade' | 'scatter'; // 애니메이션 타입 추가
@@ -55,11 +55,14 @@ export default function AnimatedText({ text, el: Wrapper = 'p', className, once 
       viewport={{ once: once, amount: 0.5 }}
     >
       {chars.map((char, i) => (
-        <Wrapper key={i} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-          <motion.span variants={currentVariants} className={styles.inlineBlock}>
-            {char === ' ' ? '\u00A0' : char} {/* 공백 처리 */}
-          </motion.span>
-        </Wrapper>
+        <motion.span
+          key={i}
+          variants={currentVariants}
+          className={styles.inlineBlock}
+          style={{ whiteSpace: 'nowrap' }} // Apply only whiteSpace here, display is handled by className
+        >
+          {char === ' ' ? '\u00A0' : char} {/* 공백 처리 */}
+        </motion.span>
       ))}
     </motion.div>
   );
