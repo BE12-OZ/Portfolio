@@ -17,7 +17,7 @@ type TimelineItemProps = {
 };
 
 export default function TimelineItem({ event, isLeft }: TimelineItemProps) {
-  const itemRef = useGsapFadeIn({ x: isLeft ? -100 : 100 }); // Apply fade-in with direction
+  const itemRef = useGsapFadeIn<HTMLDivElement>({ x: isLeft ? -100 : 100 }); // Apply fade-in with direction
 
   return (
     <div

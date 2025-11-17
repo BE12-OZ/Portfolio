@@ -9,8 +9,8 @@ import styles from './ContactSection.module.scss'; // Import the SCSS module
 
 export default function ContactSection() {
   const { setCursorType } = useCursorStore();
-  const infoRef = useGsapFadeIn(); // Apply fade-in to info group
-  const socialLinksRef = useGsapFadeIn(); // Apply fade-in to social links
+  const infoRef = useGsapFadeIn<HTMLDivElement>(); // Apply fade-in to info group
+  const socialLinksRef = useGsapFadeIn<HTMLDivElement>(); // Apply fade-in to social links
 
   return (
     <div className={styles.contactSection}>

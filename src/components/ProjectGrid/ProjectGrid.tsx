@@ -38,7 +38,7 @@ export default function ProjectGrid() {
     <div className={styles.projectGridCard}>
       <div className={styles.projectGrid}>
         {projects.map((project) => {
-          const projectCardRef = useGsapFadeIn(); // Apply fade-in to each ProjectCard
+          const projectCardRef = useGsapFadeIn<HTMLDivElement>(); // Apply fade-in to each ProjectCard
           return (
             <div key={project.id} ref={projectCardRef}>
               <ProjectCard project={project} onProjectClick={handleProjectClick} />

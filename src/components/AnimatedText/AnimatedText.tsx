@@ -55,11 +55,14 @@ export default function AnimatedText({ text, el: Wrapper = 'p', className, once 
       viewport={{ once: once, amount: 0.5 }}
     >
       {chars.map((char, i) => (
-        <Wrapper key={i} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-          <motion.span variants={currentVariants} className={styles.inlineBlock}>
-            {char === ' ' ? '\u00A0' : char} {/* 공백 처리 */}
-          </motion.span>
-        </Wrapper>
+        <motion.span
+          key={i}
+          variants={currentVariants}
+          className={styles.inlineBlock}
+          style={{ whiteSpace: 'nowrap' }} // Apply only whiteSpace here, display is handled by className
+        >
+          {char === ' ' ? '\u00A0' : char} {/* 공백 처리 */}
+        </motion.span>
       ))}
     </motion.div>
   );

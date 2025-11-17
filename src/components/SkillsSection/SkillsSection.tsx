@@ -12,7 +12,7 @@ export default function SkillsSection() {
     <div className={styles.skillsCard}>
       <div className={styles.skillsGrid}>
         {skills.map((skill) => {
-          const skillCardRef = useGsapFadeIn(); // Apply fade-in to each skill card
+          const skillCardRef = useGsapFadeIn<HTMLDivElement>(); // Apply fade-in to each skill card
           return (
             <div key={skill} ref={skillCardRef} className={styles.skillCard}>
               {skill}

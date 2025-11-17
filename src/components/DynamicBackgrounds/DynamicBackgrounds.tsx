@@ -80,8 +80,8 @@ function Shapes() {
 
   return (
     <>
-      {shapes.map((props) => (
-        <Shape key={props.key} {...props} />
+      {shapes.map(({ key, ...restProps }) => (
+        <Shape key={key} {...restProps} />
       ))}
     </>
   );
