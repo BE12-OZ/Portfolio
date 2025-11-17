@@ -1,0 +1,34 @@
+// src/components/Hero/hero.module.scss
+@import "../../styles/variables.scss";
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: $spacing-4; // px-4
+  margin-left: auto; // mx-auto
+  margin-right: auto; // mx-auto
+}
+
+.heroTitle {
+  font-size: 3rem; // text-5xl
+  font-weight: 800; // font-extrabold
+  color: $white; // text-white
+  margin-bottom: $spacing-4; // mb-4
+
+  @media (min-width: 768px) { // md:
+    font-size: 4.5rem; // md:text-7xl
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.25rem; // text-xl
+  color: $gray-300; // text-gray-400
+  
+  @media (min-width: 768px) { // md:
+    font-size: 1.5rem; // md:text-2xl
+  }
+}

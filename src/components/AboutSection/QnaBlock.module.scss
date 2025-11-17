@@ -1,0 +1,20 @@
+// src/components/AboutSection/QnaBlock.module.scss
+@import "../../styles/variables.scss";
+
+.qnaBlock {
+  margin-bottom: $spacing-4; // Example spacing
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.question {
+  font-weight: bold;
+  color: $teal-accent; // Example color
+  margin-bottom: $spacing-2;
+}
+
+.answer {
+  color: $gray-300; // Example color
+}

@@ -1,0 +1,58 @@
+// src/components/Header/Header.module.scss
+@import "../../styles/variables.scss";
+
+.header {
+  background-color: rgba($navy-dark, 0.5); // bg-navy-dark/50
+  backdrop-filter: blur(5px); // backdrop-blur-sm
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.container {
+  max-width: 1280px; // equivalent to Tailwind's container max-width
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-4; // px-4
+  padding-right: $spacing-4; // px-4
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $spacing-16; // h-16
+}
+
+.logo {
+  font-size: $text-2xl; // text-2xl
+  font-weight: bold; // font-bold
+  color: $white; // text-white
+  cursor: pointer;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: $spacing-6; // space-x-6
+}
+
+.navItem {
+  .navLink {
+    font-size: $text-lg; // text-lg
+    color: $gray-300; // text-gray-300
+    transition-property: color; // transition-colors
+    transition-duration: 150ms; // default transition duration
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); // default transition timing
+    cursor: pointer;
+
+    &:hover {
+      color: $white; // hover:text-white
+    }
+
+    &.active { // activeClass="text-teal-accent font-bold"
+      color: $teal-accent;
+      font-weight: bold;
+    }
+  }
+}

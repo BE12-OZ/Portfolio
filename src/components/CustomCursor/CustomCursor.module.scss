@@ -1,0 +1,11 @@
+// src/components/CustomCursor/CustomCursor.module.scss
+@import "../../styles/variables.scss";
+
+.cursor {
+  position: fixed; // fixed
+  top: 0; // top-0
+  left: 0; // left-0
+  border-radius: 9999px; // rounded-full
+  z-index: 9999; // z-[9999]
+  pointer-events: none; // pointer-events-none
+}

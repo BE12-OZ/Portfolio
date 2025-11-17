@@ -1,0 +1,19 @@
+// src/components/ProjectGrid/ProjectGrid.module.scss
+@import "../../styles/variables.scss";
+
+.projectGrid {
+  display: grid; // grid
+  grid-template-columns: repeat(1, minmax(0, 1fr)); // grid-cols-1
+  gap: $spacing-8; // gap-8 (assuming $spacing-8 is 2rem or 32px)
+  max-width: 64rem; // max-w-5xl (Tailwind's max-w-5xl is 64rem)
+  margin-left: auto; // mx-auto
+  margin-right: auto; // mx-auto
+
+  @media (min-width: 768px) { // md:
+    grid-template-columns: repeat(2, minmax(0, 1fr)); // md:grid-cols-2
+  }
+
+  @media (min-width: 1024px) { // lg:
+    grid-template-columns: repeat(3, minmax(0, 1fr)); // lg:grid-cols-3
+  }
+}

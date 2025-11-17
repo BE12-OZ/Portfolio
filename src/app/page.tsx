@@ -1,66 +1,66 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import AboutSection from '@/components/AboutSection/AboutSection'; // Updated path
+import JourneyTimeline from '@/components/JourneyTimeline/JourneyTimeline'; // Updated path
+import ProjectGrid from '@/components/ProjectGrid/ProjectGrid'; // Updated path
+import SkillsSection from '@/components/SkillsSection/SkillsSection'; // Updated path
+import ContactSection from '@/components/ContactSection/ContactSection'; // Updated path
+import ParallaxTitle from '@/components/ParallaxTitle/ParallaxTitle'; // Updated path
+import AnimatedText from '@/components/AnimatedText/AnimatedText'; // Updated path
+import Hero from '@/components/Hero/Hero'; // Import the new Hero component
+import { useGsapFadeIn } from '@/hooks/useGsapFadeIn'; // Import useGsapFadeIn
 
 export default function Home() {
+  const aboutRef = useGsapFadeIn(); // Apply fade-in to About Section
+  const skillsRef = useGsapFadeIn(); // Apply fade-in to Skills Section
+  const projectsRef = useGsapFadeIn(); // Apply fade-in to Projects Section
+  const journeyRef = useGsapFadeIn(); // Apply fade-in to Journey Section
+  const contactRef = useGsapFadeIn(); // Apply fade-in to Contact Section
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Home Section */}
+      <Hero />
+
+      {/* About Section */}
+      <section id="about" className="py-24 min-h-screen flex flex-col justify-center" ref={aboutRef}>
+        <div className="container mx-auto px-4">
+          <ParallaxTitle title="About Me" />
+          <AboutSection />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-24 bg-navy-dark/50 min-h-screen flex flex-col justify-center" ref={skillsRef}>
+        <div className="container mx-auto px-4">
+          <ParallaxTitle title="Skills" />
+          <SkillsSection />
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-24 min-h-screen flex flex-col justify-center" ref={projectsRef}>
+        <div className="container mx-auto px-4">
+          <ParallaxTitle title="Projects" />
+          <ProjectGrid />
+        </div>
+      </section>
+
+      {/* Journey Section */}
+      <section id="journey" className="py-24 bg-navy-dark/50 min-h-screen flex flex-col justify-center" ref={journeyRef}>
+        <div className="container mx-auto px-4">
+          <ParallaxTitle title="My Journey" />
+          <JourneyTimeline />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-24 min-h-screen flex flex-col justify-center" ref={contactRef}>
+        <div className="container mx-auto px-4">
+          <ParallaxTitle title="Contact" />
+          <ContactSection />
+        </div>
+      </section>
+    </>
   );
 }

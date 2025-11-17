@@ -1,0 +1,20 @@
+// src/components/AboutSection/AboutSection.module.scss
+@import "../../styles/variables.scss";
+
+.aboutSection {
+  text-align: center; // text-center
+  max-width: 48rem; // max-w-3xl (Tailwind's max-w-3xl is 48rem)
+  margin-left: auto; // mx-auto
+  margin-right: auto; // mx-auto
+}
+
+.animatedText {
+  font-size: $text-lg; // text-lg
+  color: $gray-300; // text-gray-300
+  line-height: 1.75; // leading-relaxed
+  margin-bottom: $spacing-4; // mb-4
+}
+
+.animatedText:last-child {
+  margin-bottom: 0; // Remove mb-4 from the last child
+}

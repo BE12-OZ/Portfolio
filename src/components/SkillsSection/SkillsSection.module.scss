@@ -1,0 +1,29 @@
+// src/components/SkillsSection/SkillsSection.module.scss
+@import "../../styles/variables.scss";
+
+.skillsSection {
+  text-align: center; // text-center
+  max-width: 56rem; // max-w-4xl (Tailwind's max-w-4xl is 56rem)
+  margin-left: auto; // mx-auto
+  margin-right: auto; // mx-auto
+}
+
+.skillsGrid {
+  display: flex; // flex
+  flex-wrap: wrap; // flex-wrap
+  justify-content: center; // justify-center
+  gap: $spacing-3; // gap-3 (assuming $spacing-3 is 0.75rem or 12px)
+}
+
+.skillCard {
+  background-color: #2d3748; // bg-card-bg (assuming this color)
+  color: #e2e8f0; // text-gray-200 (using a specific gray for now)
+  font-size: $text-lg; // text-lg
+  font-weight: 600; // font-semibold
+  padding-left: $spacing-4; // px-4
+  padding-right: $spacing-4; // px-4
+  padding-top: $spacing-2; // py-2
+  padding-bottom: $spacing-2; // py-2
+  border-radius: 0.5rem; // rounded-lg
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); // shadow-md
+}

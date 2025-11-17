@@ -1,0 +1,20 @@
+// src/components/Footer/Footer.module.scss
+@import "../../styles/variables.scss";
+
+.footer {
+  background-color: rgba($navy-dark, 0.5); // bg-navy-dark/50
+  backdrop-filter: blur(5px); // backdrop-blur-sm
+  padding-top: $spacing-8; // py-8
+  padding-bottom: $spacing-8; // py-8
+  text-align: center; // text-center
+  color: $gray-300; // text-gray-400 (using gray-300 for now, can add more specific gray shades to variables)
+  font-size: 0.875rem; // text-sm
+}
+
+.container {
+  max-width: 1280px; // equivalent to Tailwind's container max-width
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-4; // px-4
+  padding-right: $spacing-4; // px-4
+}

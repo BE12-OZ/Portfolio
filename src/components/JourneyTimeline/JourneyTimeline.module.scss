@@ -1,0 +1,18 @@
+// src/components/JourneyTimeline/JourneyTimeline.module.scss
+@import "../../styles/variables.scss";
+
+.timelineContainer {
+  position: relative; // relative
+  max-width: 56rem; // max-w-4xl
+  margin-left: auto; // mx-auto
+  margin-right: auto; // mx-auto
+}
+
+.centralLine {
+  position: absolute; // absolute
+  left: 50%; // left-1/2
+  width: 0.125rem; // w-0.5 (assuming 0.5 is 2px or 0.125rem)
+  height: 100%; // h-full
+  background-color: #4a5568; // bg-gray-700 (assuming this color)
+  transform: translateX(-50%); // style={{ transform: 'translateX(-50%)' }}
+}

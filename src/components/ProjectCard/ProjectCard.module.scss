@@ -1,0 +1,74 @@
+// src/components/ProjectCard/ProjectCard.module.scss
+@import "../../styles/variables.scss";
+
+.projectCardLink {
+  // Styles for the Link wrapper if needed, otherwise it's just a container
+}
+
+.projectCard {
+  background-color: #2d3748; // bg-card-bg (assuming this color)
+  border-radius: 0.5rem; // rounded-lg
+  overflow: hidden; // overflow-hidden
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); // shadow-lg
+  height: 100%; // h-full
+  display: flex; // flex
+  flex-direction: column; // flex-col
+}
+
+.thumbnailWrapper {
+  width: 100%; // w-full
+  height: 12rem; // h-48 (12 * 16px = 192px)
+  background-color: $navy-dark; // bg-navy-dark
+  display: flex; // flex
+  align-items: center; // items-center
+  justify-content: center; // justify-center
+}
+
+.thumbnailImage {
+  object-fit: cover; // object-cover
+  width: 100%; // w-full
+  height: 100%; // h-full
+}
+
+.content {
+  padding: $spacing-6; // p-6
+  flex-grow: 1; // flex-grow
+  display: flex; // flex
+  flex-direction: column; // flex-col
+}
+
+.category {
+  font-size: 0.875rem; // text-sm
+  color: $teal-accent; // text-teal-accent
+  font-weight: 600; // font-semibold
+}
+
+.title {
+  font-size: 1.25rem; // text-xl
+  font-weight: bold; // font-bold
+  margin-top: $spacing-2; // mt-2
+  margin-bottom: $spacing-2; // mb-2
+  color: $white; // text-light-text (assuming light-text is white)
+}
+
+.description {
+  color: $gray-300; // text-gray-400 (using gray-300 for now)
+  font-size: 0.875rem; // text-sm
+  flex-grow: 1; // flex-grow
+}
+
+.technologies {
+  margin-top: $spacing-4; // mt-4
+  display: flex; // flex
+  flex-wrap: wrap; // flex-wrap
+  gap: $spacing-2; // gap-2
+}
+
+.techTag {
+  background-color: $navy-dark; // bg-navy-dark
+  color: $gray-300; // text-gray-300
+  font-size: 0.75rem; // text-xs
+  font-weight: 500; // font-medium
+  padding: 0.25rem $spacing-2_5; // px-2.5 py-1 (assuming $spacing-2_5 is 0.625rem or 10px)
+  border-radius: 9999px; // rounded-full
+}
