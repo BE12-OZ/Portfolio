@@ -11,6 +11,7 @@ import SmoothScroll from "@/components/SmoothScroll/SmoothScroll"; // Import Smo
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Added for Vercel deployment test
 export const metadata: Metadata = {
   title: "Gwang-il's Portfolio",
   description: "A portfolio of projects by Gwang-il Jeon. Showcasing backend development skills, projects, and journey.",
