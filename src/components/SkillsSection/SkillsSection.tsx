@@ -1,21 +1,75 @@
 import { useGsapFadeIn } from '@/hooks/useGsapFadeIn'; // Import useGsapFadeIn
 import styles from './SkillsSection.module.scss'; // Import the SCSS module
+import SkillCategoryCard from './SkillCategoryCard'; // Import the new component
 
-const skills = [
-  'Python', 'Django', 'HTML/CSS', 'React', 'Next.js',
-  'PostgreSQL', 'MySQL', 'WebSocket', 'Redis',
-  'Docker', 'AWS', 'Vercel', 'Slack', 'JIRA'
+interface Skill {
+  name: string;
+}
+
+interface SkillCategory {
+  categoryName: string;
+  skills: Skill[];
+}
+
+const categorizedSkills: SkillCategory[] = [
+  {
+    categoryName: 'Frontend',
+    skills: [
+      { name: 'HTML/CSS' },
+      { name: 'React' },
+      { name: 'Next.js' },
+      { name: 'Tailwind CSS' },
+    ],
+  },
+  {
+    categoryName: 'Backend',
+    skills: [
+      { name: 'Python' },
+      { name: 'Django' },
+      { name: 'PostgreSQL' },
+      { name: 'MySQL' },
+      { name: 'WebSocket' },
+      { name: 'Redis' },
+      { name: 'RESTful API' },
+    ],
+  },
+  {
+    categoryName: 'Design',
+    skills: [
+      { name: 'Figma' },
+      { name: 'Photoshop' },
+      { name: 'AfterEffect' },
+    ],
+  },
+  {
+    categoryName: 'DevOps & Tools',
+    skills: [
+      { name: 'Docker' },
+      { name: 'AWS' },
+      { name: 'Vercel' },
+      { name: 'GitHub' },
+      { name: 'JIRA' },
+      { name: 'Slack' },
+    ],
+  },
+  {
+    categoryName: 'Communication',
+    skills: [
+      { name: 'JIRA' },
+      { name: 'Slack' },
+    ],
+  },
 ];
 
 export default function SkillsSection() {
   return (
-    <div className={styles.skillsCard}>
+    <div className={styles.skillsGridContainer}>
       <div className={styles.skillsGrid}>
-        {skills.map((skill) => {
-          const skillCardRef = useGsapFadeIn<HTMLDivElement>(); // Apply fade-in to each skill card
+        {categorizedSkills.map((category) => {
+          const skillCardRef = useGsapFadeIn<HTMLDivElement>();
           return (
-            <div key={skill} ref={skillCardRef} className={styles.skillCard}>
-              {skill}
+            <div key={category.categoryName} ref={skillCardRef}>
+              <SkillCategoryCard category={category} />
             </div>
           );
         })}
