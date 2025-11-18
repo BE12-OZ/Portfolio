@@ -23,7 +23,7 @@ export default function Home() {
       <Hero />
 
       {/* About Section */}
-      <section id="about" className="py-24 min-h-screen flex flex-col justify-center" ref={aboutRef}>
+      <section id="about" ref={aboutRef}>
         <div className="container mx-auto px-4">
           <ParallaxTitle title="About Me" />
           <AboutSection />
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 min-h-screen flex flex-col justify-center" ref={skillsRef}>
+      <section id="skills" ref={skillsRef}>
         <div className="container mx-auto px-4">
           <ParallaxTitle title="Skills" />
           <SkillsSection />
@@ -39,7 +39,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 min-h-screen flex flex-col justify-center" ref={projectsRef}>
+      <section id="projects" ref={projectsRef}>
         <div className="container mx-auto px-4">
           <ParallaxTitle title="Projects" />
           <ProjectGrid />
@@ -47,7 +47,7 @@ export default function Home() {
       </section>
 
       {/* Journey Section */}
-      <section id="journey" className="py-24 min-h-screen flex flex-col justify-center" ref={journeyRef}>
+      <section id="journey" ref={journeyRef}>
         <div className="container mx-auto px-4">
           <ParallaxTitle title="My Journey" />
           <JourneyTimeline />
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 min-h-screen flex flex-col justify-center" ref={contactRef}>
+      <section id="contact" ref={contactRef}>
         <div className="container mx-auto px-4">
           <ParallaxTitle title="Contact" />
           <ContactSection />
