@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './AnimatedText.module.scss'; // Import the SCSS module
 
@@ -18,12 +18,12 @@ const defaultVariants = {
 };
 
 const scatterVariants = {
-  hidden: {
+  hidden: () => ({
     opacity: 0,
     x: Math.random() * 200 - 100, // -100에서 100 사이의 랜덤 x
     y: Math.random() * 200 - 100, // -100에서 100 사이의 랜덤 y
     rotate: Math.random() * 360 - 180, // -180에서 180 사이의 랜덤 회전
-  },
+  }),
   visible: {
     opacity: 1,
     x: 0,
@@ -33,6 +33,11 @@ const scatterVariants = {
 };
 
 export default function AnimatedText({ text, el: Wrapper = 'p', className, once = true, animationType = 'fade' }: AnimatedTextProps) {
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const chars = Array.from(text); // 텍스트를 문자로 분할
 
   const containerVariants = {
@@ -44,7 +49,7 @@ export default function AnimatedText({ text, el: Wrapper = 'p', className, once 
     },
   };
 
-  const currentVariants = animationType === 'scatter' ? scatterVariants : defaultVariants;
+  const currentVariants = isMounted && animationType === 'scatter' ? scatterVariants : defaultVariants;
 
   return (
     <motion.div

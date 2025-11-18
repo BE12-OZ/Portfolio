@@ -3,6 +3,7 @@
 
 .parallaxContainer {
   overflow: hidden; // overflow-hidden
+  position: relative; // Add position relative for scroll target
 }
 
 .parallaxTitle {
@@ -10,4 +11,5 @@
   font-weight: bold; // font-bold
   text-align: center; // text-center
   margin-bottom: var.$spacing-12; // mb-12 (assuming $spacing-12 is 3rem or 48px)
+  color: var.$text-color; // Set text color
 }
