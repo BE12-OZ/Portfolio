@@ -1,54 +1,23 @@
 // src/components/SkillsSection/SkillsSection.module.scss
 @use "../../styles/variables.scss" as var;
 
-.skillsSection {
-  text-align: center; // text-center
-  max-width: 56rem; // max-w-4xl (Tailwind's max-w-4xl is 56rem)
+.skillsGridContainer {
+  max-width: 64rem; // max-w-5xl
   margin-left: auto; // mx-auto
   margin-right: auto; // mx-auto
-}
-
-.skillsCard {
-  background-color: var.$section-color; // 변경: $sub-color -> $section-color
-  border-radius: 1rem; // rounded-2xl
-  padding: var.$spacing-8; // p-8
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
-            0 0 8px 1px rgba(var.$glow-color, 0.2),
-            0 0 15px 2px rgba(var.$glow-color, 0.1);
-  max-width: 56rem; // max-w-4xl
-  margin-left: auto; // mx-auto
-  margin-right: auto; // mx-auto
-  margin-top: var.$spacing-8; // mt-8
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
-                0 0 12px 2px rgba(var.$glow-color, 0.4),
-                0 0 25px 5px rgba(var.$glow-color, 0.2);
-  }
-
-  @media (min-width: 768px) { // md:
-    padding: var.$spacing-12; // md:p-12
-  }
+  margin-top: var.$spacing-8; // Add some top margin
 }
 
 .skillsGrid {
-  display: flex; // flex
-  flex-wrap: wrap; // flex-wrap
-  justify-content: center; // justify-center
-  gap: var.$spacing-3; // gap-3 (assuming $spacing-3 is 0.75rem or 12px)
-}
+  display: grid; // grid
+  grid-template-columns: repeat(1, minmax(0, 1fr)); // grid-cols-1
+  gap: var.$spacing-8; // gap-8
 
-.skillCard {
-  background-color: var.$background-color; // 변경: $base-color -> $background-color
-  color: var.$text-color; // 변경: $point-color -> $text-color
-  font-size: var.$text-lg; // text-lg
-  font-weight: 600; // font-semibold
-  padding-left: var.$spacing-4; // px-4
-  padding-right: var.$spacing-4; // px-4
-  padding-top: var.$spacing-2; // py-2
-  padding-bottom: var.$spacing-2; // py-2
-  border-radius: 0.5rem; // rounded-lg
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); // shadow-md
+  @media (min-width: 768px) { // md:
+    grid-template-columns: repeat(2, minmax(0, 1fr)); // md:grid-cols-2
+  }
+
+  @media (min-width: 1024px) { // lg:
+    grid-template-columns: repeat(3, minmax(0, 1fr)); // lg:grid-cols-3
+  }
 }
