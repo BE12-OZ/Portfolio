@@ -42,14 +42,11 @@ const categorizedSkills: SkillCategory[] = [
     ],
   },
   {
-    categoryName: 'DevOps & Tools',
+    categoryName: 'DevOps',
     skills: [
       { name: 'Docker' },
       { name: 'AWS' },
       { name: 'Vercel' },
-      { name: 'GitHub' },
-      { name: 'JIRA' },
-      { name: 'Slack' },
     ],
   },
   {
