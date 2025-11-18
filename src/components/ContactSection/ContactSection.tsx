@@ -19,16 +19,16 @@ export default function ContactSection() {
         <div className="space-y-4" ref={infoRef}> {/* Tailwind class for spacing, will be converted later */}
           <div className={styles.infoGroup}>
             <Mail size={20} />
-            <span className={styles.infoText}>your-email@example.com</span>
+            <span className={styles.infoText}>dhwmzheld6470@gmail.com</span>
           </div>
           <div className={styles.infoGroup}>
             <Phone size={20} />
-            <span className={styles.infoText}>010-1234-5678</span>
+            <span className={styles.infoText}>010-2868-6470</span>
           </div>
         </div>
         <div className={styles.socialLinks} ref={socialLinksRef}>
           <Link 
-            href="https://github.com/your-username" 
+            href="https://github.com/BE12-OZ"
             target="_blank" 
             className={`${styles.socialLink} ${styles.github}`}
             onMouseEnter={() => setCursorType('hovered')}
@@ -38,7 +38,7 @@ export default function ContactSection() {
             GitHub
           </Link>
           <Link 
-            href="https://velog.io/@your-username" 
+            href="https://velog.io/@i_lu/about"
             target="_blank" 
             className={`${styles.socialLink} ${styles.velog}`}
             onMouseEnter={() => setCursorType('hovered')}
