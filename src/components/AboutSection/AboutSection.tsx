@@ -38,15 +38,6 @@ export default function AboutSection() {
            보이는 것과 보이지 않는 것을 모두 이해하는 개발자가 되고자 하기 때문입니다."
       />
       <QnaBlock
-        q="✨어떤 기술들을 다루고 있나요?"
-        a="• Frontend: React, JavaScript, HTML/CSS
-           • Backend: Python(Django,DRF), Node.js
-           • Database: SQL · NoSQL
-           • Virtualization Platform: Docker
-
-           서비스 전반의 흐름을 스스로 설계할 수 있는 역량을 쌓고 있습니다."
-      />
-      <QnaBlock
         q="✨궁극적으로 만들고 싶은 것은?"
         a="사용자가 쉽게 다가갈 수 있는 직관적이고 아름다운 인터페이스,
            보이지 않는 데이터의 가치를 시각적으로 드러내는 서비스,
