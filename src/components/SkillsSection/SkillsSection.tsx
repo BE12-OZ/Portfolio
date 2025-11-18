@@ -2,9 +2,9 @@ import { useGsapFadeIn } from '@/hooks/useGsapFadeIn'; // Import useGsapFadeIn
 import styles from './SkillsSection.module.scss'; // Import the SCSS module
 
 const skills = [
-  'Python', 'Django', 'FastAPI', 'Node.js', 'TypeScript',
-  'React', 'Next.js', 'PostgreSQL', 'MySQL', 'MongoDB',
-  'Redis', 'Docker', 'Kubernetes', 'AWS', 'Terraform'
+  'Python', 'Django', 'HTML/CSS', 'React', 'Next.js',
+  'PostgreSQL', 'MySQL', 'WebSocket', 'Redis',
+  'Docker', 'AWS', 'Vercel', 'Slack', 'JIRA'
 ];
 
 export default function SkillsSection() {
