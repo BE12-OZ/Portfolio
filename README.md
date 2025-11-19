@@ -1,3 +1,6 @@
+
+<img width="1916" height="934" alt="111" src="https://github.com/user-attachments/assets/82aa91db-6176-4521-9e7e-0fa28fedfd05" />
+
 # 개인 포트폴리오
 
 이 프로젝트는 개발자로서의 저의 역량을 강조하면서 그 동안의 과정을 시각화하여 표현하는 것을 목표로 합니다.
