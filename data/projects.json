@@ -47,7 +47,7 @@
     "longDescription": "백엔드는 Django Rest Framework를 사용하여 API를 구축했으며, Django Channels를 통해 WebSocket 기반의 실시간 채팅 기능을 구현했습니다. 프론트엔드는 React를 사용하여 동적인 사용자 인터페이스를 제공합니다. Celery와 Redis를 활용하여 비동기 작업을 처리하며, AI 서비스 연동, 사용자 관리, 결제, 알림 등 다양한 기능을 포함하고 있는 종합적인 웹 플랫폼입니다.",
     "technologies": ["Django", "Django Rest Framework", "Channels", "React", "Celery", "Redis", "Docker", "Nginx"],
     "links": {
-      "github": "https://github.com/oz-main-project-12th-team-3/BE",
+      "github": "https://github.com/oz-main-project-12th-team-3/BE/tree/develop",
       "liveDemo": "https://ozaisecretary.com/"
     }
   },
